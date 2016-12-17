@@ -23,13 +23,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GmV-F7-QSm">
-                                <rect key="frame" x="96.5" y="248" width="183" height="171"/>
+                                <rect key="frame" x="96.5" y="243.5" width="183" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="171" id="mDV-U7-gsq"/>
+                                    <constraint firstAttribute="height" constant="180" id="mDV-U7-gsq"/>
                                 </constraints>
                                 <state key="normal" image="ScanIcon"/>
                                 <connections>
-                                    <segue destination="LAY-bk-LsI" kind="push" id="CyD-8f-gPH"/>
+                                    <segue destination="LAY-bk-LsI" kind="presentation" id="jkH-x1-E7q"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan QRCode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCp-CX-Gse">
@@ -52,6 +52,7 @@
                             <constraint firstItem="GmV-F7-QSm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wza-pE-2A8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="LDq-sV-6NO"/>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="31.875" y="38.028169014084504"/>
@@ -69,23 +70,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PfY-IP-7um">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Scan" id="RY0-c5-bRk"/>
-                                </items>
-                            </navigationBar>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ds-DS-cju">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLo-7G-ice">
+                                        <rect key="frame" x="12" y="28" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="Nxw-Fn-ms2"/>
+                                        </constraints>
+                                        <state key="normal" image="CloseIcon"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="WHo-xs-rnr"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMM-pq-kLh">
+                                        <rect key="frame" x="168" y="30" width="39" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="vLo-7G-ice" secondAttribute="bottom" constant="12" id="2fh-BY-PbT"/>
+                                    <constraint firstItem="vLo-7G-ice" firstAttribute="top" secondItem="6Ds-DS-cju" secondAttribute="top" constant="28" id="GKs-cQ-aST"/>
+                                    <constraint firstItem="EMM-pq-kLh" firstAttribute="top" secondItem="6Ds-DS-cju" secondAttribute="top" constant="30" id="Zsu-53-cFh"/>
+                                    <constraint firstItem="EMM-pq-kLh" firstAttribute="centerX" secondItem="6Ds-DS-cju" secondAttribute="centerX" id="b4e-mf-Dkh"/>
+                                    <constraint firstAttribute="height" constant="64" id="enU-PJ-yD3"/>
+                                    <constraint firstItem="vLo-7G-ice" firstAttribute="leading" secondItem="6Ds-DS-cju" secondAttribute="leading" constant="12" id="vhk-DV-GrV"/>
+                                    <constraint firstItem="EMM-pq-kLh" firstAttribute="centerY" secondItem="vLo-7G-ice" secondAttribute="centerY" id="wBA-hD-aGi"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrs-sb-2pM">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.14805772569444445" blue="0.110595703125" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2sa-7e-96y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97197808159722221" green="0.97317165798611116" blue="0.971923828125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yrs-sb-2pM" firstAttribute="trailing" secondItem="6Ds-DS-cju" secondAttribute="trailing" id="EFi-dx-3co"/>
+                            <constraint firstItem="Yrs-sb-2pM" firstAttribute="bottom" secondItem="NwD-NN-WQI" secondAttribute="top" id="YlH-cT-PxG"/>
+                            <constraint firstItem="6Ds-DS-cju" firstAttribute="top" secondItem="WzD-YV-eoE" secondAttribute="top" id="dAn-6H-ETE"/>
+                            <constraint firstAttribute="trailing" secondItem="6Ds-DS-cju" secondAttribute="trailing" id="eIJ-BV-r9h"/>
+                            <constraint firstItem="Yrs-sb-2pM" firstAttribute="leading" secondItem="6Ds-DS-cju" secondAttribute="leading" id="ex1-Vq-KSY"/>
+                            <constraint firstItem="6Ds-DS-cju" firstAttribute="leading" secondItem="WzD-YV-eoE" secondAttribute="leading" id="zbF-dx-Jai"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dF6-jl-DtF"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="789.60000000000002" y="34.632683658170919"/>
+            <point key="canvasLocation" x="788" y="33.733133433283363"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ScanIcon" width="200" height="201"/>
+        <image name="CloseIcon" width="35" height="35"/>
+        <image name="ScanIcon" width="180" height="181"/>
     </resources>
 </document>
