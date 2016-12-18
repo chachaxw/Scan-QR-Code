@@ -62,7 +62,7 @@
             <objects>
                 <exit id="Io7-7I-9WA" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5N-FL-MNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="LAY-bk-LsI" customClass="QRScannerController" customModule="Scan_QR_Code" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="LAY-bk-LsI" customClass="QRScannerController" customModule="Scan_QR_Code" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xqe-a5-kem"/>
                         <viewControllerLayoutGuide type="bottom" id="NwD-NN-WQI"/>
@@ -124,6 +124,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dF6-jl-DtF"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="messageLabel" destination="Yrs-sb-2pM" id="WXt-40-jAO"/>
                         <outlet property="topbar" destination="6Ds-DS-cju" id="jRe-1l-nzS"/>
