@@ -60,6 +60,7 @@
         <!--Scanner Controller-->
         <scene sceneID="SSW-dO-ECd">
             <objects>
+                <exit id="Io7-7I-9WA" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5N-FL-MNj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="LAY-bk-LsI" customClass="QRScannerController" customModule="Scan_QR_Code" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
@@ -70,7 +71,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ds-DS-cju" userLabel="TopBar">
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ds-DS-cju" userLabel="TopBar">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMM-pq-kLh">
@@ -85,6 +86,9 @@
                                             <constraint firstAttribute="width" constant="18" id="Nxw-Fn-ms2" userLabel="width = 18"/>
                                         </constraints>
                                         <state key="normal" image="CloseIcon"/>
+                                        <connections>
+                                            <segue destination="Io7-7I-9WA" kind="unwind" unwindAction="unwindToHomeScreenWithSegue:" id="8LH-Qz-2Ji"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,7 +102,7 @@
                                     <constraint firstItem="EMM-pq-kLh" firstAttribute="centerY" secondItem="vLo-7G-ice" secondAttribute="centerY" id="wBA-hD-aGi"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrs-sb-2pM" userLabel="Message Label">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR/barcode code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrs-sb-2pM" userLabel="Message Label">
                                 <rect key="frame" x="0.0" y="612" width="375" height="55"/>
                                 <color key="backgroundColor" red="1" green="0.14805772569444445" blue="0.110595703125" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
